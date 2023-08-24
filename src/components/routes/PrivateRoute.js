@@ -9,13 +9,8 @@ import RedirectRoute from "./RedirectRoute";
 const PrivateRoute = () => {
     //context
     const [auth, setAuth] = useAuth();
-
+    setAuth(auth);
     const [ok, setOk] = useState(false);
-
-    useEffect(()=>{
-        if(auth?.token) getCurrentUser();
-    }, [auth?.token]);
-
     const getCurrentUser = async () => {
         try{
             const {data} = await axios.get('/current-user' , {
@@ -25,11 +20,18 @@ const PrivateRoute = () => {
             })
             //here we took  and find the  {data} not for storing but if in getting the data any error came out
             // then catch will get the error and setOk will remian false.
+            console.log(data);
             setOk(true);
         }catch(err){
             setOk(false);
         }
     }
+
+    useEffect(()=>{
+        if(auth?.token) getCurrentUser();
+    }, [auth?.token, getCurrentUser()]);
+
+    
 
     return ok ? <Outlet /> : <RedirectRoute />;                                            //outlet is here means, yes the children components can render
 }

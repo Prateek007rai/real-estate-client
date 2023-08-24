@@ -6,7 +6,6 @@ import AdFeatures from "../components/cards/AdFeatures";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import LikeUnlike from "../components/misc/LikeUnlik";
-import HTMLRenderer from 'react-html-renderer';
 import AdCards from "../components/cards/AdCards";
 import ContactSeller from "../components/forms/ContactSeller";
 
@@ -25,7 +24,7 @@ const AdView = () => {
 
     useEffect(() => {
         if(params?.slug) fetchAd();
-    }, [params?.slug]);
+    }, [params?.slug, fetchAd()]);
 
     const fetchAd =async() =>{
       try{

@@ -18,7 +18,7 @@ const RedirectRoute = () => {
        count === 0 && navigate('/');
 
        return () => clearInterval(interval)
-    }, [count]);
+    }, [count, navigate]);
 
     return (
         <div className="d-flex justify-content-center align-items-center vh-100" style={{marginTop: "-7%"}}>
