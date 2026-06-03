@@ -1,33 +1,4 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Home from "./Pages/Home";
-import Login from './Pages/Login';
-import Register from './Pages/Register';
-import { AuthProvider } from './context/auth';
-import Main from './components/nav/Main';
-import {Toaster} from 'react-hot-toast';
-import AccountActivate from './Pages/auth/AccountActivate';
-import ForgotPassword from './Pages/auth/ForgotPassword';
-import AccessAccount from './Pages/auth/AccessAccount';
-import Dashboard from './Pages/user/Dashboard';
-import AdCreate from './Pages/user/ad/AdCreate';
-import PrivateRoute from './components/routes/PrivateRoute';
-import SellHouse from './Pages/user/ad/SellHouse';
-import SellLand from './Pages/user/ad/SellLand';
-import RentHouse from './Pages/user/ad/RentHouse';
-import RentLand from './Pages/user/ad/RentLand';
-import AdView from './Pages/AdView';
-import Footer from './components/nav/Footer';
-import Profile from './Pages/user/Profile';
-import Settings from './Pages/user/Settings';
-import AdEdit from './Pages/user/ad/AdEdit';
-import Wishlist from './Pages/user/Wishlist';
-import Enquiries from './Pages/user/Enquiries';
-import Agents from './Pages/Agents';
-import Agent from './Pages/Agent';
-import Buy from './Pages/Buy';
-import Rent from './Pages/Rent';
-import { SearchProvider } from './context/Search';
-import Search from './Pages/Search';
+
 
 const PageNotFound = () =>(
    <div className='text-center p-5'>
